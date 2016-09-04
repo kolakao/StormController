@@ -1,0 +1,47 @@
+@*
+* This template takes a single argument, a String containing a
+* message to display.
+*@
+@(message: String)
+@*
+* Call the `main` template with two arguments. The first
+* argument is a `String` with the title of the page, the second
+* argument is an `Html` object containing the body of the page.
+*@
+@main("Welcome to Play") {
+    <script>
+
+    $ ( function ( ) {
+    $ ( "#navigation" ).tabs ( {
+    beforeLoad : function ( event, ui ) {
+    ui.jqXHR.fail ( function ( ) {
+    ui.panel.html (
+    "Couldn't load this tab. We'll try to fix this as soon as possible. " ) ;
+    } ) ;
+    }
+    } ) ;
+    } ) ;
+    </script>
+
+    <header>
+        <div class="wrap">
+            <h2>Storm Controller</h2>
+        </div>
+    </header>
+    <div id="navigation">
+        <ul>
+            <li><a href="#stormWeather">Storm Weather</a></li>
+            <li><a href="http://code.jquery.com/ui/1.12.0/themes/vader/jquery-ui.css">Tab 1</a></li>
+        </ul>
+
+        <div id="stormWeather">
+            <img src="/site">
+        </div>
+    </div>
+
+    <div class="footer">
+        Created by Janusz Fatyga, all rights reserved. JF 2016
+    </div>
+
+
+}
